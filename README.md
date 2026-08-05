@@ -52,3 +52,16 @@ After 5 requests within a 5-second window from the same IP, subsequent requests 
 ```
 HTTP/1.1 429 Too Many Requests
 ```
+
+## Testing
+
+Run the test suite with:
+
+```bash
+yarn test
+```
+
+This runs the Jest suite (via `@swc/jest`, so TypeScript is transpiled without type-checking) covering:
+
+- `GET /` returns `200` with a `currentDateTime` payload.
+- The rate limiter returns `429 Too Many Requests` once a client exceeds `RATE_LIMITER_MAX_REQUESTS` requests.

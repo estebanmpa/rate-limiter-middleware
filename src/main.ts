@@ -1,10 +1,6 @@
-import express from "express";
-import { defaultRouter } from "./routes/default.route.js";
+import { app } from "./app.js";
 
-const app = express();
 const port = 3000;
-
-app.use(defaultRouter);
 
 const server = app.listen(port, () => {
   console.log(`rate-limiter listening on port ${port}`);
