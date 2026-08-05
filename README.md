@@ -2,7 +2,7 @@
 
 A small Express + TypeScript API with an in-memory rate limiter middleware.
 
-Requests are limited per client IP to **5 requests every 5 seconds**. Once the limit is hit, the API responds with `429 Too Many Requests` until the window resets.
+Requests are limited per `x-user-id` header to **5 requests every 5 seconds**. Once the limit is hit, the API responds with `429 Too Many Requests` until the window resets.
 
 ## Requirements
 
@@ -37,7 +37,7 @@ The API will be available at [http://localhost:3000](http://localhost:3000).
 ### Example
 
 ```bash
-curl -i http://localhost:3000/
+curl -i -H "x-user-id: user-123" http://localhost:3000/
 ```
 
 ```
@@ -47,7 +47,7 @@ Content-Type: application/json; charset=utf-8
 {"currentDateTime":"2026-08-05T12:00:00.000Z"}
 ```
 
-After 5 requests within a 5-second window from the same IP, subsequent requests receive:
+After 5 requests within a 5-second window from the same `x-user-id`, subsequent requests receive:
 
 ```
 HTTP/1.1 429 Too Many Requests
