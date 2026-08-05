@@ -1,0 +1,19 @@
+{
+  "name": "rate-limiter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "build": "tsc",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.1.2",
+    "tsx": "^4.23.8",
+    "typescript": "^7.0.2"
+  }
+}

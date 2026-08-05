@@ -1,0 +1,28 @@
+name: rate-limiter-local
+
+services:
+  server:
+    container_name: server-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    env_file:
+      - ./.env
+    restart: unless-stopped
+    depends_on:
+      - cache
+
+  cache:
+    image: redis
+    container_name: cache-container
+    restart: unless-stopped
+    volumes:
+      - redis-volume:/data
+    ports:
+      - 6379:6379
+    command: ["redis-server", "--appendonly", "yes"]
+
+volumes:
+  redis-volume:
