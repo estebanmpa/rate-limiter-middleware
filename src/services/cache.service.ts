@@ -1,12 +1,22 @@
-import { redisClient } from "../cache/redis.js";
+type CacheEntry = { value: string; expiresAt: number };
 
-export const RATE_LIMITER_TTL_SECONDS = 60;
-export const RATE_LIMITER_MAX_REQUESTS = 10;
+const store = new Map<string, CacheEntry>();
+
+export const RATE_LIMITER_TTL_SECONDS = 5;
+export const RATE_LIMITER_MAX_REQUESTS = 5;
 
 export async function get(key: string) {
-    return redisClient.get(key);
+    const entry = store.get(key);
+    if (!entry) return null;
+
+    if (Date.now() >= entry.expiresAt) {
+        store.delete(key);
+        return null;
+    }
+
+    return entry.value;
 }
 
 export async function set(key: string, value: string, ttlSeconds: number) {
-    await redisClient.set(key, value, { EX: ttlSeconds });
+    store.set(key, { value, expiresAt: Date.now() + ttlSeconds * 1000 });
 }

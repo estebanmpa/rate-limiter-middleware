@@ -132,33 +132,6 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.28.1.tgz#10064ee44f4347b90c9a02b446bbf80a91632b12"
   integrity sha512-bm4Mowrv+GXMlpWX++EcXw/iLyd1o3+bJkC2DkWXYVvgZCqD/bSj9ctZeAMC3cIxgjRVR2Dufaiu4YPxr5gW1A==
 
-"@redis/bloom@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@redis/bloom/-/bloom-6.2.0.tgz#fbd66dffbd7e2b1151f4195da461a8432cb686b3"
-  integrity sha512-ggQvzpeCKnybwUrEiMVVtE1Np4vWnRfpeAaIP2MdZiVw7PHOhJrF4cONVuLRn1TkMi6ehp2OPjTOMK+8XmiQSQ==
-
-"@redis/client@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@redis/client/-/client-6.2.0.tgz#5d21d880aa0c5c6ba2f54aa64486071b3a2dc7ea"
-  integrity sha512-HHszna68MTBRiDZV3Wo2wANH7Z5v/nuh+ZyCAGBce0PS8tDcg1/yzZ1vqbKbUyTdz1wB54kqZxXrnPwpR8Ivdw==
-  dependencies:
-    cluster-key-slot "1.1.2"
-
-"@redis/json@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@redis/json/-/json-6.2.0.tgz#5ddf42521fce7a34c7d5dc64e63f4560364d1dbe"
-  integrity sha512-oweO7PfHWYXkgVT88K+Fm3Wx98lKYKAEXaH162gVbw1kmBOBVQHxw0Yjh1p6BYBUIQMHqLyWwYe99eK7/hD1VQ==
-
-"@redis/search@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@redis/search/-/search-6.2.0.tgz#65788d53e758e0557a603e0dc0b675c61353c43c"
-  integrity sha512-chLEQfalFW3+uCPE99XoIOZhcQ3eF7S3fGxgiiaPf6MMrOZHEiTvgMnXR4xXZX0yDecyoWjGYlQQKTYag/ZExg==
-
-"@redis/time-series@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@redis/time-series/-/time-series-6.2.0.tgz#57b2df20e1653c5a225afce3f681d72754593dda"
-  integrity sha512-/H/eE/lnhZLZYpHGpI+ZN7TePb7isEaub8b07oQcTDQptPslVKdUFwNhUm+hQHks781oh+F1Leiip1WHh4HfWw==
-
 "@types/body-parser@*":
   version "1.19.6"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.6.tgz#1859bebb8fd7dac9918a45d54c1971ab8b5af474"
@@ -373,11 +346,6 @@ call-bound@^1.0.2:
   dependencies:
     call-bind-apply-helpers "^1.0.2"
     get-intrinsic "^1.3.0"
-
-cluster-key-slot@1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/cluster-key-slot/-/cluster-key-slot-1.1.2.tgz#88ddaa46906e303b5de30d3153b7d9fe0a0c19ac"
-  integrity sha512-RMr0FhtfXemyinomL4hrWcYJxmX6deFdCxpJzhDttxgO1+bcCnkk+9drydLVDmAMG7NE6aN/fl4F7ucU/90gAA==
 
 content-disposition@^1.0.0:
   version "1.1.0"
@@ -730,17 +698,6 @@ raw-body@^3.0.2:
     http-errors "~2.0.1"
     iconv-lite "~0.7.0"
     unpipe "~1.0.0"
-
-redis@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/redis/-/redis-6.2.0.tgz#38c599cd21c985921063b3d858a17030c2623e32"
-  integrity sha512-BShYVyT0Gx67CE80xry5XroSSv6Vxr60yKs0HRiBbUc7kHm+bY7gvSDBBgTjuiV/reWKeZWLyA1ebC5z359wRQ==
-  dependencies:
-    "@redis/bloom" "6.2.0"
-    "@redis/client" "6.2.0"
-    "@redis/json" "6.2.0"
-    "@redis/search" "6.2.0"
-    "@redis/time-series" "6.2.0"
 
 router@^2.2.0:
   version "2.2.0"

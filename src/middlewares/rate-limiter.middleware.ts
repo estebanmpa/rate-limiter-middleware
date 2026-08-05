@@ -7,7 +7,7 @@ export async function rateLimiter(req: Request, res: Response, next: NextFunctio
   const currentHits: number = parseInt((await get(key)) || "0");
 
   if (currentHits >= RATE_LIMITER_MAX_REQUESTS) {
-    res.status(429).json({ error: "Too many requests" });
+    res.status(429).json({ error: "Rate limit exceeded" });
     return;
   }
 
